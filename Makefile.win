@@ -1,0 +1,67 @@
+# Project: Project1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o bubbleSort.o bubbleSortParada.o bucketSort.o insercaoBinaria.o insercaoDireta.o mergeSort.o quicksortcentro.o quicksortfim.o quicksortmediana.o radixSort.o shellSort.o selecaoDireta.o heapSort.o
+LINKOBJ  = main.o bubbleSort.o bubbleSortParada.o bucketSort.o insercaoBinaria.o insercaoDireta.o mergeSort.o quicksortcentro.o quicksortfim.o quicksortmediana.o radixSort.o shellSort.o selecaoDireta.o heapSort.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Project1.exe
+CXXFLAGS = $(CXXINCS) -std=c99
+CFLAGS   = $(INCS) -std=c99
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+bubbleSort.o: bubbleSort.c
+	$(CC) -c bubbleSort.c -o bubbleSort.o $(CFLAGS)
+
+bubbleSortParada.o: bubbleSortParada.c
+	$(CC) -c bubbleSortParada.c -o bubbleSortParada.o $(CFLAGS)
+
+bucketSort.o: bucketSort.c
+	$(CC) -c bucketSort.c -o bucketSort.o $(CFLAGS)
+
+insercaoBinaria.o: insercaoBinaria.c
+	$(CC) -c insercaoBinaria.c -o insercaoBinaria.o $(CFLAGS)
+
+insercaoDireta.o: insercaoDireta.c
+	$(CC) -c insercaoDireta.c -o insercaoDireta.o $(CFLAGS)
+
+mergeSort.o: mergeSort.c
+	$(CC) -c mergeSort.c -o mergeSort.o $(CFLAGS)
+
+quicksortcentro.o: quicksortcentro.c
+	$(CC) -c quicksortcentro.c -o quicksortcentro.o $(CFLAGS)
+
+quicksortfim.o: quicksortfim.c
+	$(CC) -c quicksortfim.c -o quicksortfim.o $(CFLAGS)
+
+quicksortmediana.o: quicksortmediana.c
+	$(CC) -c quicksortmediana.c -o quicksortmediana.o $(CFLAGS)
+
+radixSort.o: radixSort.c
+	$(CC) -c radixSort.c -o radixSort.o $(CFLAGS)
+
+shellSort.o: shellSort.c
+	$(CC) -c shellSort.c -o shellSort.o $(CFLAGS)
+
+selecaoDireta.o: selecaoDireta.c
+	$(CC) -c selecaoDireta.c -o selecaoDireta.o $(CFLAGS)
+
+heapSort.o: heapSort.c
+	$(CC) -c heapSort.c -o heapSort.o $(CFLAGS)
